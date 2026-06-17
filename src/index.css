@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;750&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f5f4f0; /* Warm organic clay off-white */
+  color: #1c1917; /* Slate charcoal */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Elegant Dark Mode override style block */
+#root-container.dark {
+  background-color: #121212 !important;
+  color: #e5e5e5 !important;
+}
+
+#root-container.dark select,
+#root-container.dark input,
+#root-container.dark textarea {
+  background-color: #1c1917 !important;
+  color: #ffffff !important;
+  border-color: #44403c !important;
+}
+
+#root-container.dark .bg-white {
+  background-color: #1c1917 !important;
+  color: #e5e5e5 !important;
+  border-color: #2e2a24 !important;
+}
+
+#root-container.dark .bg-stone-50,
+#root-container.dark .bg-stone-50\/50,
+#root-container.dark .bg-stone-100,
+#root-container.dark .bg-stone-50\/20 {
+  background-color: #272421 !important;
+  color: #e5e5e5 !important;
+  border-color: #44403c !important;
+}
+
+#root-container.dark .text-stone-900,
+#root-container.dark .text-stone-880,
+#root-container.dark .text-stone-850,
+#root-container.dark .text-stone-800 {
+  color: #f5f4f0 !important;
+}
+
+#root-container.dark .text-stone-700,
+#root-container.dark .text-stone-600 {
+  color: #d6d3d1 !important;
+}
+
+#root-container.dark .text-stone-500,
+#root-container.dark .text-stone-400 {
+  color: #a8a29e !important;
+}
+
+#root-container.dark .border-stone-200,
+#root-container.dark .border-stone-150,
+#root-container.dark .border-stone-250,
+#root-container.dark .border-stone-100 {
+  border-color: #2e2a24 !important;
+}
+
+#root-container.dark .border-stone-300 {
+  border-color: #44403c !important;
+}
+
+#root-container.dark .bg-emerald-50 {
+  background-color: #064e3b !important;
+  color: #6ee7b7 !important;
+}
+
+#root-container.dark .text-emerald-800,
+#root-container.dark .text-emerald-700 {
+  color: #34d399 !important;
+}
+
+/* Print Overrides */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-family: Arial, sans-serif !important;
+  }
+  /* Show only the core report inspector sheet */
+  #app-header-nav,
+  #agri-export-guide,
+  #left-form-history-column,
+  #printer-simulator-module,
+  #laudo-preview-card > .print\:hidden,
+  #feedback-toast-container,
+  footer {
+    display: none !important;
+  }
+  #root,
+  #root-container,
+  #main-workspace-content,
+  #right-preview-column,
+  #laudo-preview-card,
+  #printable-sheet {
+    display: block !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow: visible !important;
+  }
+}
